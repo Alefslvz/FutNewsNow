@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutNews Now - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/images.png">
+</head>
+<body>
+    <button class="btn-toggle-sidebar" onclick="document.querySelector('.sidebar-lateral').classList.toggle('aberta')">☰</button>
+    <div class="sidebar-lateral">
+        <div>
+            <div class="logo-sidebar">
+                <a href="index.html">
+                    <span class="logo-main">FUTNEWS</span>
+                    <span class="logo-now">NOW</span>
+                </a>
+                <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span class="icone">🏠</span>
+                    <span>Início</span>
+                </a>
+                <a href="brasileiro.html">
+                    <span class="icone">🇧🇷</span>
+                    <span>Brasileirão</span>
+                </a>
+                <a href="internacional.html">
+                    <span class="icone">🌍</span>
+                    <span>Internacional</span>
+                </a>
+                <a href="transferencias.html">
+                    <span class="icone">🔄</span>
+                    <span>Transferências</span>
+                </a>
+                <a href="tabelas.html">
+                    <span class="icone">📊</span>
+                    <span>Tabelas</span>
+                </a>
+            </nav>
+        </div>
+        <div>
+            <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
+                <span class="icone">🌙</span>
+                <span>Modo Escuro</span>
+            </button>
+            <div class="perfil-sidebar" onclick="abrirModal(event)" style="cursor: pointer;">
+                <div class="avatar" id="perfilAvatar">👤</div>
+                <div class="info" id="perfilInfo">
+                    <h4 id="perfilNome">Visitante</h4>
+                    <p id="perfilStatus">Clique para entrar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-main">FUTNEWS</span>
+                <span class="logo-now">NOW</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="brasileiro.html">Brasileirão</a>
+            <a href="internacional.html">Internacional</a>
+            <a href="transferencias.html">Transferências</a>
+            <a href="tabelas.html">Tabelas</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Pesquisar...">
+        </div>
+    </header>
+    <main class="layout">
+        <div class="main-content">
+            <section class="hero-news">
+                <div class="hero-image">
+                    <img src="img/filipe-luis-demitido.jpg" alt="filipeluis_demitido">
+                </div>
+                <div class="hero-text">
+                    <h1>Filipe Luís não é mais treinador do Flamengo</h1>
+                    <span class="data">03/03/2026 • Futebol Brasileiro</span>
+                    <p>Clube anuncia saída do treinador e inicia busca por substituto para a sequência da temporada.</p>
+                    <a href="noticia.html?id=1" class="btn">Ler matéria completa</a>
+                </div>
+            </section>
+            <section class="cards">
+                <div class="card">
+                    <img src="img/fla-flu.png" alt="final carioca">
+                    <div class="card-content">
+                        <h3>Final do Campeonato Carioca 2026</h3>
+                        <span class="data">02/03/2026 • Futebol Brasileiro</span>
+                        <p>Decisão estadual tem data e transmissão confirmadas.</p>
+                        <a href="noticia.html?id=2">Ler mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/choque-rei-palmeiras-sao-paulo.png" alt="choquerei">
+                    <div class="card-content">
+                        <h3>Mesmo com nova polêmica no Choque-Rei, Verdão avança</h3>
+                        <span class="data">02/03/2026 • Futebol Brasileiro</span>
+                        <p>Vitória por 2x1 contou com novo pênalti polêmico.</p>
+                        <a href="noticia.html?id=3">Ler mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/polemica.jpg" alt="polemica_choquerei"> 
+                    <div class="card-content">
+                        <h3>Ex-árbitros analisam polêmicas</h3>
+                        <span class="data">02/03/2026 • Arbitragem</span>
+                        <p>Especialistas comentam decisões contestadas no clássico.</p>
+                        <a href="noticia.html?id=4">Ler mais</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <div class="highlights">
+                <h3>Principais Destaques</h3>
+                <ul>
+                    <li><a href="#">O melhor da terça-feira no Disney+</a></li>
+                    <li><a href="#">Flamengo encaminha acordo com Jardim</a></li>
+                    <li><a href="#">Rodrygo sofre lesão e está fora da Copa</a></li>
+                    <li><a href="#">Vasco fica perto de anunciar Renato</a></li>
+                    <li><a href="#">100 dias para Copa: ranking de favoritos</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
+    </footer>
+    <div id="modalLogin" class="modal-login">
+        <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+        <div class="modal-conteudo">
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button id="abaLoginBtn" onclick="mostrarAba('login')"
+                    style="flex:1; background:#0b3d2e; color:white; padding:10px; border:none; border-radius:6px; cursor:pointer;">Entrar</button>
+                <button id="abaRegistroBtn" onclick="mostrarAba('registro')"
+                    style="flex:1; background:#555; color:white; padding:10px; border:none; border-radius:6px; cursor:pointer;">Cadastrar</button>
+            </div>
+
+            <div id="abaLogin">
+                <input type="text" id="loginUsuario" placeholder="Usuário" autocomplete="off"
+                    style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
+                <input type="password" id="loginSenha" placeholder="Senha"
+                    style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
+                <button onclick="fazerLogin()"
+                    style="width:100%; padding:12px; margin-top:10px; background:#0b3d2e; color:white; border:none; border-radius:6px; cursor:pointer;">Entrar</button>
+                <div id="erroLogin" class="erro-login"></div>
+            </div>
+
+            <div id="abaRegistro" style="display: none;">
+                <input type="text" id="regUsuario" placeholder="Usuário" autocomplete="off"
+                    style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
+                <input type="email" id="regEmail" placeholder="E-mail"
+                    style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
+                <input type="password" id="regSenha" placeholder="Senha"
+                    style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
+                <button onclick="fazerRegistro()"
+                    style="width:100%; padding:12px; margin-top:10px; background:#0b3d2e; color:white; border:none; border-radius:6px; cursor:pointer;">Cadastrar</button>
+                <div id="erroRegistro" class="erro-login"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

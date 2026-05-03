@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol Internacional - FutNews Now</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/x-icon" href="img/images.png">
+</head>
+<body>
+    <button class="btn-toggle-sidebar" onclick="document.querySelector('.sidebar-lateral').classList.toggle('aberta')">☰</button>
+    <div class="sidebar-lateral">
+        <div>
+            <div class="logo-sidebar">
+                <a href="index.html">
+                    <span class="logo-main">FUTNEWS</span>
+                    <span class="logo-now">NOW</span>
+                </a>
+                <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span class="icone">🏠</span>
+                    <span>Início</span>
+                </a>
+                <a href="brasileiro.html">
+                    <span class="icone">🇧🇷</span>
+                    <span>Brasileirão</span>
+                </a>
+                <a href="internacional.html">
+                    <span class="icone">🌍</span>
+                    <span>Internacional</span>
+                </a>
+                <a href="transferencias.html">
+                    <span class="icone">🔄</span>
+                    <span>Transferências</span>
+                </a>
+                <a href="tabelas.html">
+                    <span class="icone">📊</span>
+                    <span>Tabelas</span>
+                </a>
+            </nav>
+        </div>
+        <div>
+            <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
+                <span class="icone">🌙</span>
+                <span>Modo Escuro</span>
+            </button>
+            <div class="perfil-sidebar" onclick="abrirModal(event)" style="cursor: pointer;">
+                <div class="avatar" id="perfilAvatar">👤</div>
+                <div class="info" id="perfilInfo">
+                    <h4 id="perfilNome">Visitante</h4>
+                    <p id="perfilStatus">Clique para entrar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-main">FUTNEWS</span>
+                <span class="logo-now">NOW</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="brasileiro.html">Brasileirão</a>
+            <a href="internacional.html">Internacional</a>
+            <a href="transferencias.html">Transferências</a>
+            <a href="tabelas.html">Tabelas</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Pesquisar...">
+        </div>
+    </header>
+    <main>
+        <h1>Futebol Internacional</h1>
+        <section class="destaque-internacional">
+            <h2>Destaque do Futebol Europeu</h2>
+            <article class="noticia-destaque">
+                <img src="img/champions league.png" alt="Champions League">
+                <h3>Champions League entra na fase decisiva da temporada</h3>
+                <p>A UEFA Champions League chega às fases eliminatórias com confrontos entre alguns dos maiores clubes do futebol mundial. Equipes como Real Madrid, Manchester City, Bayern de Munique e Barcelona seguem entre os favoritos ao título.</p>
+                <p>A competição reúne os principais clubes da Europa e é considerada o torneio mais prestigiado do futebol de clubes no mundo.</p>
+            </article>
+        </section>
+        <section class="noticias-internacional">
+            <h2>Últimas notícias</h2>
+            <article class="noticia">
+                <img src="img/disputa-titulo-premier.png" alt="Premier League">
+                <h3>Arsenal e Manchester City disputam liderança da Premier League</h3>
+                <p>A Premier League segue com forte disputa pelas primeiras posições. Arsenal e Manchester City aparecem entre os principais candidatos ao título nesta temporada do futebol inglês.</p>
+            </article>
+            <article class="noticia">
+                <img src="img/real-nadisputa-champions.jpg" alt="Real Madrid">
+                <h3>Real Madrid segue forte na Liga dos Campeões</h3>
+                <p>O Real Madrid continua sendo um dos clubes mais tradicionais da competição europeia e aparece novamente entre os candidatos a avançar às fases finais da Champions League.</p>
+            </article>
+            <article class="noticia">
+                <img src="img/Yamal-provocou-o-Real-Madrid-apos-o-titulo-1-edited-aspect-ratio-512-320.png" alt="Yamal">
+                <h3>Barcelona aposta em jovens talentos para nova temporada</h3>
+                <p>O clube catalão segue investindo em jovens jogadores formados em La Masia e em reforços promissores para voltar a disputar os principais títulos do futebol europeu.</p>
+            </article>
+        </section>
+        <section class="artilharia-internacional">
+            <h2>Artilharia da Premier League</h2>
+            <ul>
+                <li>Erling Haaland (Manchester City) – 22 gols</li>
+                <li>Igor Thiago (Brentford) – 18 gols</li>
+                <li>Antoine Semenyo (Manchester City) – 14 gols</li>
+                <li>João Pedro (Chelsea) – 11 gols</li>
+                <li>Hugo Ekitike (Liverpool) – 11 gols</li>
+            </ul>
+        </section>
+        <section class="mais-noticias">
+            <h2>Mais notícias do futebol internacional</h2>
+            <article class="noticia">
+                <img src="img/oitavas champions.png" alt="Oitavas Champions League">
+                <h3>Oitavas de final da Champions prometem grandes confrontos</h3>
+                <p>A fase eliminatória da Liga dos Campeões reúne confrontos entre gigantes europeus e promete partidas de alto nível nas próximas semanas da competição.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
