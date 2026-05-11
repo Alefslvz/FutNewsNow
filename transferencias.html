@@ -1,151 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transferências - FutNews Now</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="icon" type="image/x-icon" href="img/images.png">
-</head>
-<body>
-    <button class="btn-toggle-sidebar" onclick="document.querySelector('.sidebar-lateral').classList.toggle('aberta')">☰</button>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="img/images.png" />
+  </head>
+  <body>
+    <button
+      class="btn-toggle-sidebar"
+      onclick="
+        document.querySelector('.sidebar-lateral').classList.toggle('aberta')
+      "
+    >
+      ☰
+    </button>
     <div class="sidebar-lateral">
-        <div>
-            <div class="logo-sidebar">
-                <a href="index.html">
-                    <span class="logo-main">FUTNEWS</span>
-                    <span class="logo-now">NOW</span>
-                </a>
-                <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
-            </div>
-            <nav>
-                <a href="index.html">
-                    <span class="icone">🏠</span>
-                    <span>Início</span>
-                </a>
-                <a href="brasileiro.html">
-                    <span class="icone">🇧🇷</span>
-                    <span>Brasileirão</span>
-                </a>
-                <a href="internacional.html">
-                    <span class="icone">🌍</span>
-                    <span>Internacional</span>
-                </a>
-                <a href="transferencias.html">
-                    <span class="icone">🔄</span>
-                    <span>Transferências</span>
-                </a>
-                <a href="tabelas.html">
-                    <span class="icone">📊</span>
-                    <span>Tabelas</span>
-                </a>
-            </nav>
-        </div>
-        <div>
-            <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
-                <span class="icone">🌙</span>
-                <span>Modo Escuro</span>
-            </button>
-            <div class="perfil-sidebar" onclick="abrirModal(event)" style="cursor: pointer;">
-                <div class="avatar" id="perfilAvatar">👤</div>
-                <div class="info" id="perfilInfo">
-                    <h4 id="perfilNome">Visitante</h4>
-                    <p id="perfilStatus">Clique para entrar</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-main">FUTNEWS</span>
-                <span class="logo-now">NOW</span>
-            </a>
+      <div>
+        <div class="logo-sidebar">
+          <a href="index.html">
+            <span class="logo-main">FUTNEWS</span>
+            <span class="logo-now">NOW</span>
+          </a>
+          <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
         </div>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="brasileiro.html">Brasileirão</a>
-            <a href="internacional.html">Internacional</a>
-            <a href="transferencias.html">Transferências</a>
-            <a href="tabelas.html">Tabelas</a>
+          <a href="index.html">
+            <span class="icone">🏠</span>
+            <span>Início</span>
+          </a>
+          <a href="brasileiro.html">
+            <span class="icone">🇧🇷</span>
+            <span>Brasileirão</span>
+          </a>
+          <a href="internacional.html">
+            <span class="icone">🌍</span>
+            <span>Internacional</span>
+          </a>
+          <a href="transferencias.html">
+            <span class="icone">🔄</span>
+            <span>Transferências</span>
+          </a>
+          <a href="tabelas.html">
+            <span class="icone">📊</span>
+            <span>Tabelas</span>
+          </a>
         </nav>
-        <div class="search-box">
-            <input type="text" placeholder="Pesquisar...">
+      </div>
+      <div>
+        <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
+          <span class="icone">🌙</span>
+          <span>Modo Escuro</span>
+        </button>
+        <div
+          class="perfil-sidebar"
+          onclick="abrirModal(event)"
+          style="cursor: pointer"
+        >
+          <div class="avatar" id="perfilAvatar">👤</div>
+          <div class="info" id="perfilInfo">
+            <h4 id="perfilNome">Visitante</h4>
+            <p id="perfilStatus">Clique para entrar</p>
+          </div>
         </div>
+      </div>
+    </div>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-main">FUTNEWS</span>
+          <span class="logo-now">NOW</span>
+        </a>
+      </div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="brasileiro.html">Brasileirão</a>
+        <a href="internacional.html">Internacional</a>
+        <a href="transferencias.html">Transferências</a>
+        <a href="tabelas.html">Tabelas</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="Pesquisar..." />
+      </div>
     </header>
     <main class="layout">
-        <div class="main-content">
-            <h2>Mercado da Bola</h2>
+      <div class="main-content">
+        <h2>Mercado da Bola</h2>
 
-            <section class="cards">
-                <div class="card">
-                    <img src="img/lucas-paqueta-flamengo.png">
-                    <div class="card-content">
-                        <h3>Flamengo anuncia retorno de Lucas Paquetá</h3>
-                        <span class="data">30/01/2026 • Futebol Brasileiro</span>
-                        <p>O Flamengo acertou a contratação do meia Lucas Paquetá em uma das negociações mais impactantes da janela de transferências. O jogador retorna ao clube após passagem pelo futebol europeu.</p>
-                        <a href="noticia.html">Ler mais</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/benzema-al-hilal-e1770207764770.png">
-                    <div class="card-content">
-                        <h3>Benzema acerta com o Al-Hilal</h3>
-                        <span class="data">02/02/2026 • Futebol Internacional</span>
-                        <p>Karim Benzema foi um dos nomes mais comentados do mercado e acertou transferência para o Al-Hilal, reforçando ainda mais o investimento do futebol saudita em grandes estrelas.</p>
-                        <a href="noticia.html">Ler mais</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="destaques-janela">
-                <h2>Destaques da Janela de Transferências</h2>
-                <article class="noticia">
-                    <img src="img/Premier-League-lidera-gastos-na-janela-de-verao-no-futebol-europeu-4.jpg" alt="imagem da notícia">
-                    <div>
-                        <h3>Premier League lidera investimentos na janela</h3>
-                        <span class="data">03/02/2026 • Mercado Internacional</span>
-                        <p>Os clubes da Premier League foram novamente os que mais investiram na janela de transferências. Mesmo em uma janela considerada mais equilibrada, os ingleses lideraram os gastos do futebol mundial.</p>
-                    </div>
-                </article>
-                <article class="noticia">
-                    <img src="img/arabia contrataçoes.png" alt="imagem da notícia">
-                    <div>
-                        <h3>Arábia Saudita segue atraindo grandes estrelas</h3>
-                        <span class="data">02/02/2026 • Futebol Internacional</span>
-                        <p>O futebol saudita continua sendo um dos grandes protagonistas do mercado mundial. Diversos jogadores experientes da Europa foram negociados para clubes do país nesta janela.</p>
-                    </div>
-                </article>
-                <article class="noticia">
-                    <img src="img/Soccer-money_1749782924073.jpg" alt="imagem da notícia">
-                    <div>
-                        <h3>Mercado global movimenta bilhões em transferências</h3>
-                        <span class="data">01/02/2026 • Mercado Global</span>
-                        <p>A janela de transferências movimentou bilhões de euros em negociações entre clubes de todo o mundo, envolvendo contratações estratégicas tanto na Europa quanto em ligas emergentes.</p>
-                    </div>
-                </article>
-            </section>
-        </div>
-
-        <aside class="sidebar">
-            <div class="highlights">
-                <h3>Principais Destaques</h3>
-                <ul>
-                    <li><a href="#">Janela de transferências movimenta clubes</a></li>
-                    <li><a href="#">Paquetá retorna ao Flamengo</a></li>
-                    <li><a href="#">Benzema reforça Al-Hilal</a></li>
-                    <li><a href="#">Premier League lidera gastos</a></li>
-                    <li><a href="#">Mercado global movimenta bilhões</a></li>
-                </ul>
+        <section class="cards">
+          <div class="card">
+            <img src="img/lucas-paqueta-flamengo.png" />
+            <div class="card-content">
+              <h3>Flamengo anuncia retorno de Lucas Paquetá</h3>
+              <span class="data">30/01/2026 • Futebol Brasileiro</span>
+              <p>
+                O Flamengo acertou a contratação do meia Lucas Paquetá em uma
+                das negociações mais impactantes da janela de transferências. O
+                jogador retorna ao clube após passagem pelo futebol europeu.
+              </p>
+              <a href="noticia.html">Ler mais</a>
             </div>
-        </aside>
+          </div>
+          <div class="card">
+            <img src="img/benzema-al-hilal-e1770207764770.png" />
+            <div class="card-content">
+              <h3>Benzema acerta com o Al-Hilal</h3>
+              <span class="data">02/02/2026 • Futebol Internacional</span>
+              <p>
+                Karim Benzema foi um dos nomes mais comentados do mercado e
+                acertou transferência para o Al-Hilal, reforçando ainda mais o
+                investimento do futebol saudita em grandes estrelas.
+              </p>
+              <a href="noticia.html">Ler mais</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="destaques-janela">
+          <h2>Destaques da Janela de Transferências</h2>
+          <article class="noticia">
+            <img
+              src="img/Premier-League-lidera-gastos-na-janela-de-verao-no-futebol-europeu-4.jpg"
+              alt="imagem da notícia"
+            />
+            <div>
+              <h3>Premier League lidera investimentos na janela</h3>
+              <span class="data">03/02/2026 • Mercado Internacional</span>
+              <p>
+                Os clubes da Premier League foram novamente os que mais
+                investiram na janela de transferências. Mesmo em uma janela
+                considerada mais equilibrada, os ingleses lideraram os gastos do
+                futebol mundial.
+              </p>
+            </div>
+          </article>
+          <article class="noticia">
+            <img src="img/arabia contrataçoes.png" alt="imagem da notícia" />
+            <div>
+              <h3>Arábia Saudita segue atraindo grandes estrelas</h3>
+              <span class="data">02/02/2026 • Futebol Internacional</span>
+              <p>
+                O futebol saudita continua sendo um dos grandes protagonistas do
+                mercado mundial. Diversos jogadores experientes da Europa foram
+                negociados para clubes do país nesta janela.
+              </p>
+            </div>
+          </article>
+          <article class="noticia">
+            <img
+              src="img/Soccer-money_1749782924073.jpg"
+              alt="imagem da notícia"
+            />
+            <div>
+              <h3>Mercado global movimenta bilhões em transferências</h3>
+              <span class="data">01/02/2026 • Mercado Global</span>
+              <p>
+                A janela de transferências movimentou bilhões de euros em
+                negociações entre clubes de todo o mundo, envolvendo
+                contratações estratégicas tanto na Europa quanto em ligas
+                emergentes.
+              </p>
+            </div>
+          </article>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="highlights">
+          <h3>Principais Destaques</h3>
+          <ul>
+            <li><a href="#">Janela de transferências movimenta clubes</a></li>
+            <li><a href="#">Paquetá retorna ao Flamengo</a></li>
+            <li><a href="#">Benzema reforça Al-Hilal</a></li>
+            <li><a href="#">Premier League lidera gastos</a></li>
+            <li><a href="#">Mercado global movimenta bilhões</a></li>
+          </ul>
+        </div>
+      </aside>
     </main>
 
     <footer>
-        <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
+      <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
     </footer>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
