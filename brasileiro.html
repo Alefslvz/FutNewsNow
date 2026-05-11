@@ -1,130 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brasileirão - FutNews Now</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="icon" type="image/x-icon" href="img/images.png">
-</head>
-<body>
-    <button class="btn-toggle-sidebar" onclick="document.querySelector('.sidebar-lateral').classList.toggle('aberta')">☰</button>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="img/images.png" />
+  </head>
+  <body>
+    <button
+      class="btn-toggle-sidebar"
+      onclick="
+        document.querySelector('.sidebar-lateral').classList.toggle('aberta')
+      "
+    >
+      ☰
+    </button>
     <div class="sidebar-lateral">
-        <div>
-            <div class="logo-sidebar">
-                <a href="index.html">
-                    <span class="logo-main">FUTNEWS</span>
-                    <span class="logo-now">NOW</span>
-                </a>
-                <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
-            </div>
-            <nav>
-                <a href="index.html">
-                    <span class="icone">🏠</span>
-                    <span>Início</span>
-                </a>
-                <a href="brasileiro.html">
-                    <span class="icone">🇧🇷</span>
-                    <span>Brasileirão</span>
-                </a>
-                <a href="internacional.html">
-                    <span class="icone">🌍</span>
-                    <span>Internacional</span>
-                </a>
-                <a href="transferencias.html">
-                    <span class="icone">🔄</span>
-                    <span>Transferências</span>
-                </a>
-                <a href="tabelas.html">
-                    <span class="icone">📊</span>
-                    <span>Tabelas</span>
-                </a>
-            </nav>
-        </div>
-        <div>
-            <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
-                <span class="icone">🌙</span>
-                <span>Modo Escuro</span>
-            </button>
-            <div class="perfil-sidebar" onclick="abrirModal(event)" style="cursor: pointer;">
-                <div class="avatar" id="perfilAvatar">👤</div>
-                <div class="info" id="perfilInfo">
-                    <h4 id="perfilNome">Visitante</h4>
-                    <p id="perfilStatus">Clique para entrar</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-main">FUTNEWS</span>
-                <span class="logo-now">NOW</span>
-            </a>
+      <div>
+        <div class="logo-sidebar">
+          <a href="index.html">
+            <span class="logo-main">FUTNEWS</span>
+            <span class="logo-now">NOW</span>
+          </a>
+          <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
         </div>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="brasileiro.html">Brasileirão</a>
-            <a href="internacional.html">Internacional</a>
-            <a href="transferencias.html">Transferências</a>
-            <a href="tabelas.html">Tabelas</a>
+          <a href="index.html">
+            <span class="icone">🏠</span>
+            <span>Início</span>
+          </a>
+          <a href="brasileiro.html">
+            <span class="icone">🇧🇷</span>
+            <span>Brasileirão</span>
+          </a>
+          <a href="internacional.html">
+            <span class="icone">🌍</span>
+            <span>Internacional</span>
+          </a>
+          <a href="transferencias.html">
+            <span class="icone">🔄</span>
+            <span>Transferências</span>
+          </a>
+          <a href="tabelas.html">
+            <span class="icone">📊</span>
+            <span>Tabelas</span>
+          </a>
         </nav>
-        <div class="search-box">
-            <input type="text" placeholder="Pesquisar...">
+      </div>
+      <div>
+        <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
+          <span class="icone">🌙</span>
+          <span>Modo Escuro</span>
+        </button>
+        <div
+          class="perfil-sidebar"
+          onclick="abrirModal(event)"
+          style="cursor: pointer"
+        >
+          <div class="avatar" id="perfilAvatar">👤</div>
+          <div class="info" id="perfilInfo">
+            <h4 id="perfilNome">Visitante</h4>
+            <p id="perfilStatus">Clique para entrar</p>
+          </div>
         </div>
+      </div>
+    </div>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-main">FUTNEWS</span>
+          <span class="logo-now">NOW</span>
+        </a>
+      </div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="brasileiro.html">Brasileirão</a>
+        <a href="internacional.html">Internacional</a>
+        <a href="transferencias.html">Transferências</a>
+        <a href="tabelas.html">Tabelas</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="Pesquisar..." />
+      </div>
     </header>
     <main>
-        <h1>Campeonato Brasileiro</h1>
-        <section class="destaque-brasileirao">
-            <h2>Destaque do Brasileirão</h2>
-            <article class="noticia-destaque">
-                <img src="img/brasileirao-2026-a.png" alt="brasileirao 2026">
-                <h3>Brasileirão começa com grandes confrontos</h3>
-                <p>O Campeonato Brasileiro Série A começa com grandes jogos logo nas primeiras rodadas. Entre os confrontos mais aguardados estão partidas entre alguns dos principais clubes do país, como São Paulo, Flamengo, Palmeiras e Atlético-MG.</p>
-                <p>A temporada promete uma disputa equilibrada pelo título e também pelas vagas nas competições continentais, como a Libertadores e a Copa Sul-Americana.</p>
-            </article>
-        </section>
-        <section class="noticias-brasileirao">
-            <h2>Últimas notícias</h2>
-            <article class="noticia">
-                <img src="img/carlos-vinicius-se-torna-referencia-ofensiva-do-gremio.jpg" alt="carlos-vinicius">
-                <h3>Disputa pela artilharia começa intensa</h3>
-                <p>Os primeiros jogos do Brasileirão já começaram a mostrar quais atacantes podem se destacar na briga pela artilharia da competição. Alguns jogadores já aparecem entre os principais goleadores nas primeiras rodadas.</p>
-            </article>
-            <article class="noticia">
-                <img src="img/carrosel-reforços-brasileirao.jpg" alt="Notícia">
-                <h3>Clubes reforçam elencos para a temporada</h3>
-                <p>Diversos clubes da Série A seguem movimentando o mercado de transferências em busca de reforços para fortalecer seus elencos durante a temporada.</p>
-            </article>
-            <article class="noticia">
-                <img src="img/briga-por-liberta.jpg" alt="Notícia">
-                <h3>Briga por vaga na Libertadores promete emoção</h3>
-                <p>Além da disputa pelo título, a luta pelas vagas nas competições internacionais é sempre um dos pontos mais disputados do Campeonato Brasileiro.</p>
-            </article>
-        </section>
-        <section class="artilharia-brasileirao">
-            <h2>Artilharia do Brasileirão</h2>
-            <ul>
-                <li>Carlos Vinícius (Grêmio) – 4 gols</li>
-                <li>Danilo (Botafogo) – 4 gols</li>
-                <li>Breno Lopes (Coritiba) – 3 gols</li>
-                <li>Vitor Roque (Palmeiras) – 3 gols</li>
-            </ul>
-        </section>
-        <section class="mais-noticias">
-            <h2>Mais notícias do Brasileirão</h2>
-            <article class="noticia">
-                <img src="img/carrossel-jogos-historicos-50-maisv4.png" alt="Imagem da notícia">
-                <h3>Os 50 melhores jogos da história do Brasileirão: veja o resultado da eleição</h3>
-                <p>86 especialistas elegem as partidas mais memoráveis da competição</p>
-            </article>
-        </section>
+      <h1>Campeonato Brasileiro</h1>
+      <section class="destaque-brasileirao">
+        <h2>Destaque do Brasileirão</h2>
+        <article class="noticia-destaque">
+          <img src="img/brasileirao-2026-a.png" alt="brasileirao 2026" />
+          <h3>Brasileirão começa com grandes confrontos</h3>
+          <p>
+            O Campeonato Brasileiro Série A começa com grandes jogos logo nas
+            primeiras rodadas. Entre os confrontos mais aguardados estão
+            partidas entre alguns dos principais clubes do país, como São Paulo,
+            Flamengo, Palmeiras e Atlético-MG.
+          </p>
+          <p>
+            A temporada promete uma disputa equilibrada pelo título e também
+            pelas vagas nas competições continentais, como a Libertadores e a
+            Copa Sul-Americana.
+          </p>
+        </article>
+      </section>
+      <section class="noticias-brasileirao">
+        <h2>Últimas notícias</h2>
+        <article class="noticia">
+          <img
+            src="img/carlos-vinicius-se-torna-referencia-ofensiva-do-gremio.jpg"
+            alt="carlos-vinicius"
+          />
+          <h3>Disputa pela artilharia começa intensa</h3>
+          <p>
+            Os primeiros jogos do Brasileirão já começaram a mostrar quais
+            atacantes podem se destacar na briga pela artilharia da competição.
+            Alguns jogadores já aparecem entre os principais goleadores nas
+            primeiras rodadas.
+          </p>
+        </article>
+        <article class="noticia">
+          <img src="img/carrosel-reforços-brasileirao.jpg" alt="Notícia" />
+          <h3>Clubes reforçam elencos para a temporada</h3>
+          <p>
+            Diversos clubes da Série A seguem movimentando o mercado de
+            transferências em busca de reforços para fortalecer seus elencos
+            durante a temporada.
+          </p>
+        </article>
+        <article class="noticia">
+          <img src="img/briga-por-liberta.jpg" alt="Notícia" />
+          <h3>Briga por vaga na Libertadores promete emoção</h3>
+          <p>
+            Além da disputa pelo título, a luta pelas vagas nas competições
+            internacionais é sempre um dos pontos mais disputados do Campeonato
+            Brasileiro.
+          </p>
+        </article>
+      </section>
+      <section class="artilharia-brasileirao">
+        <h2>Artilharia do Brasileirão</h2>
+        <ul>
+          <li>Carlos Vinícius (Grêmio) – 4 gols</li>
+          <li>Danilo (Botafogo) – 4 gols</li>
+          <li>Breno Lopes (Coritiba) – 3 gols</li>
+          <li>Vitor Roque (Palmeiras) – 3 gols</li>
+        </ul>
+      </section>
+      <section class="mais-noticias">
+        <h2>Mais notícias do Brasileirão</h2>
+        <article class="noticia">
+          <img
+            src="img/carrossel-jogos-historicos-50-maisv4.png"
+            alt="Imagem da notícia"
+          />
+          <h3>
+            Os 50 melhores jogos da história do Brasileirão: veja o resultado da
+            eleição
+          </h3>
+          <p>
+            86 especialistas elegem as partidas mais memoráveis da competição
+          </p>
+        </article>
+      </section>
     </main>
     <footer>
-        <p>© 2026 FutNews Now - Todos os direitos reservados</p>
+      <p>© 2026 FutNews Now - Todos os direitos reservados</p>
     </footer>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
