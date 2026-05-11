@@ -1,282 +1,409 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabelas - FutNews Now</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="icon" type="image/x-icon" href="img/images.png">
-</head>
-<body>
-    <button class="btn-toggle-sidebar" onclick="document.querySelector('.sidebar-lateral').classList.toggle('aberta')">☰</button>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="img/images.png" />
+  </head>
+  <body>
+    <button
+      class="btn-toggle-sidebar"
+      onclick="
+        document.querySelector('.sidebar-lateral').classList.toggle('aberta')
+      "
+    >
+      ☰
+    </button>
     <div class="sidebar-lateral">
-        <div>
-            <div class="logo-sidebar">
-                <a href="index.html">
-                    <span class="logo-main">FUTNEWS</span>
-                    <span class="logo-now">NOW</span>
-                </a>
-                <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
-            </div>
-            <nav>
-                <a href="index.html">
-                    <span class="icone">🏠</span>
-                    <span>Início</span>
-                </a>
-                <a href="brasileiro.html">
-                    <span class="icone">🇧🇷</span>
-                    <span>Brasileirão</span>
-                </a>
-                <a href="internacional.html">
-                    <span class="icone">🌍</span>
-                    <span>Internacional</span>
-                </a>
-                <a href="transferencias.html">
-                    <span class="icone">🔄</span>
-                    <span>Transferências</span>
-                </a>
-                <a href="tabelas.html">
-                    <span class="icone">📊</span>
-                    <span>Tabelas</span>
-                </a>
-            </nav>
-        </div>
-        <div>
-            <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
-                <span class="icone">🌙</span>
-                <span>Modo Escuro</span>
-            </button>
-            <div class="perfil-sidebar" onclick="abrirModal(event)" style="cursor: pointer;">
-                <div class="avatar" id="perfilAvatar">👤</div>
-                <div class="info" id="perfilInfo">
-                    <h4 id="perfilNome">Visitante</h4>
-                    <p id="perfilStatus">Clique para entrar</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-main">FUTNEWS</span>
-                <span class="logo-now">NOW</span>
-            </a>
+      <div>
+        <div class="logo-sidebar">
+          <a href="index.html">
+            <span class="logo-main">FUTNEWS</span>
+            <span class="logo-now">NOW</span>
+          </a>
+          <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
         </div>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="brasileiro.html">Brasileirão</a>
-            <a href="internacional.html">Internacional</a>
-            <a href="transferencias.html">Transferências</a>
-            <a href="tabelas.html">Tabelas</a>
+          <a href="index.html">
+            <span class="icone">🏠</span>
+            <span>Início</span>
+          </a>
+          <a href="brasileiro.html">
+            <span class="icone">🇧🇷</span>
+            <span>Brasileirão</span>
+          </a>
+          <a href="internacional.html">
+            <span class="icone">🌍</span>
+            <span>Internacional</span>
+          </a>
+          <a href="transferencias.html">
+            <span class="icone">🔄</span>
+            <span>Transferências</span>
+          </a>
+          <a href="tabelas.html">
+            <span class="icone">📊</span>
+            <span>Tabelas</span>
+          </a>
         </nav>
-        <div class="search-box">
-            <input type="text" placeholder="Pesquisar...">
+      </div>
+      <div>
+        <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
+          <span class="icone">🌙</span>
+          <span>Modo Escuro</span>
+        </button>
+        <div
+          class="perfil-sidebar"
+          onclick="abrirModal(event)"
+          style="cursor: pointer"
+        >
+          <div class="avatar" id="perfilAvatar">👤</div>
+          <div class="info" id="perfilInfo">
+            <h4 id="perfilNome">Visitante</h4>
+            <p id="perfilStatus">Clique para entrar</p>
+          </div>
         </div>
+      </div>
+    </div>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-main">FUTNEWS</span>
+          <span class="logo-now">NOW</span>
+        </a>
+      </div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="brasileiro.html">Brasileirão</a>
+        <a href="internacional.html">Internacional</a>
+        <a href="transferencias.html">Transferências</a>
+        <a href="tabelas.html">Tabelas</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="Pesquisar..." />
+      </div>
     </header>
     <main>
-        <h1 style="text-align:center;margin-top:40px;">Tabelas das Principais Ligas</h1>
-        <section class="liga-section">
-            <div class="tabela-container">
-                <h2 class="liga-title">
-                    <img src="img/Campeonato_Brasileiro_de_Futebol_de_2024_-_Série_A.png" class="liga-icon">
-                    Brasileirão Série A
-                </h2>
-                <table class="tabela-espn">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Time</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                            <th>PTS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="libertadores">
-                            <td>1</td>
-                            <td class="time"><img src="img/png-transparent-sociedade-esportiva-palmeiras-removebg-preview.png" class="escudo"> Palmeiras</td>
-                            <td>4</td><td>3</td><td>1</td><td>0</td><td>12</td><td>5</td><td>+7</td>
-                            <td class="pontos">10</td>
-                        </tr>
-                        <tr class="libertadores">
-                            <td>2</td>
-                            <td class="time"><img src="img/sp.png" class="escudo"> São Paulo</td>
-                            <td>4</td><td>3</td><td>1</td><td>0</td><td>6</td><td>2</td><td>+4</td>
-                            <td class="pontos">10</td>
-                        </tr>
-                        <tr class="libertadores">
-                            <td>3</td>
-                            <td class="time"><img src="img/escudo-Corinthians-removebg-preview.png" class="escudo"> Corinthians</td>
-                            <td>4</td><td>2</td><td>1</td><td>1</td><td>5</td><td>3</td><td>+2</td>
-                            <td class="pontos">7</td>
-                        </tr>
-                        <tr class="libertadores">
-                            <td>4</td>
-                            <td class="time"><img src="img/images-removebg-preview.png" class="escudo"> Bahia</td>
-                            <td>3</td><td>2</td><td>1</td><td>0</td><td>4</td><td>2</td><td>+2</td>
-                            <td class="pontos">7</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td class="time"><img src="img/Fluminense_Football_Club.svg-removebg-preview.png" class="escudo"> Fluminense</td>
-                            <td>4</td><td>2</td><td>1</td><td>1</td><td>5</td><td>4</td><td>+1</td>
-                            <td class="pontos">7</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="estatisticas-liga">
-                <div class="stat-card">
-                    <h3>Artilheiros</h3>
-                    <ul>
-                        <li>Carlos Vinícius (Grêmio) — 4 gols</li>
-                        <li>Danilo (Botafogo) — 4 gols</li>
-                        <li>Luciano Acosta (Fluminense) — 3 gols</li>
-                    </ul>
-                </div>
-                <div class="stat-card">
-                    <h3>Assistências</h3>
-                    <ul>
-                        <li>Andreas Pereira (Palmeiras) — 5</li>
-                        <li>Rodrigo Garro (Corinthians) — 3</li>
-                        <li>Lucas Ronier (Coritiba) — 2</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="liga-section">
-            <div class="tabela-container">
-                <h2 class="liga-title">
-                    <img src="img/premier icon1.png" class="liga-icon" alt=icon_premier>
-                </h2>
-                <table class="tabela-espn">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Time</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                            <th>PTS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="champions">
-                            <td>1</td>
-                            <td class="time"><img src="img/arsenal.png" class="escudo"> Arsenal</td>
-                            <td>29</td><td>19</td><td>7</td><td>3</td><td>58</td><td>22</td><td>+36</td>
-                            <td class="pontos">64</td>
-                        </tr>
-                        <tr class="champions">
-                            <td>2</td>
-                            <td class="time"><img src="img/city.png" class="escudo"> Manchester City</td>
-                            <td>28</td><td>18</td><td>5</td><td>5</td><td>57</td><td>25</td><td>+32</td>
-                            <td class="pontos">59</td>
-                        </tr>
-                        <tr class="champions">
-                            <td>3</td>
-                            <td class="time"><img src="img/Liverpool_FC.svg-removebg-preview.png" class="escudo"> Liverpool</td>
-                            <td>28</td><td>17</td><td>6</td><td>5</td><td>54</td><td>30</td><td>+24</td>
-                            <td class="pontos">57</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="estatisticas-liga">
-                <div class="stat-card">
-                    <h3>Artilheiros</h3>
-                    <ul>
-                        <li>Erling Haaland — 22 gols</li>
-                        <li>Igor Thiago — 17 gols</li>
-                        <li>Antoine Semenyo — 13 gols</li>
-                    </ul>
-                </div>
-                <div class="stat-card">
-                    <h3>Assistências</h3>
-                    <ul>
-                        <li>Bruno Fernandes — 12</li>
-                        <li>Rayan Cherki — 7</li>
-                        <li>Erling Haaland — 6</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="liga-section">
-            <div class="tabela-container">
-                <h2 class="liga-title">
-                    <img src="img/LaLiga-Logo-PNG-Official-Symbol-for-Football-League-Transparent-jpg-removebg-preview.png" class="liga-icon">
-                    La Liga
-                </h2>
-                <table class="tabela-espn">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Time</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                            <th>PTS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="champions">
-                            <td>1</td>
-                            <td class="time"><img src="img/real.png" class="escudo"> Real Madrid</td>
-                            <td>27</td><td>20</td><td>5</td><td>2</td><td>60</td><td>25</td><td>+35</td>
-                            <td class="pontos">65</td>
-                        </tr>
-                        <tr class="champions">
-                            <td>2</td>
-                            <td class="time"><img src="img/barça.png" class="escudo"> Barcelona</td>
-                            <td>27</td><td>18</td><td>6</td><td>3</td><td>55</td><td>30</td><td>+25</td>
-                            <td class="pontos">60</td>
-                        </tr>
-                        <tr class="champions">
-                            <td>3</td>
-                            <td class="time"><img src="img/girona.png" class="escudo"> Girona</td>
-                            <td>26</td><td>17</td><td>5</td><td>4</td><td>50</td><td>28</td><td>+22</td>
-                            <td class="pontos">56</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="estatisticas-liga">
-                <div class="stat-card">
-                    <h3>Artilheiros</h3>
-                    <ul>
-                        <li>Kylian Mbappé — 23 gols</li>
-                        <li>Vedat Muriqi — 16 gols</li>
-                        <li>Lamine Yamal — 13 gols</li>
-                    </ul>
-                </div>
-                <div class="stat-card">
-                    <h3>Assistências</h3>
-                    <ul>
-                        <li>Lamine Yamal — 9</li>
-                        <li>Luis Milla — 8</li>
-                        <li>Arda Güler — 7</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <h1 style="text-align: center; margin-top: 40px">
+        Tabelas das Principais Ligas
+      </h1>
+      <section class="liga-section">
+        <div class="tabela-container">
+          <h2 class="liga-title">
+            <img
+              src="img/Campeonato_Brasileiro_de_Futebol_de_2024_-_Série_A.png"
+              class="liga-icon"
+            />
+            Brasileirão Série A
+          </h2>
+          <table class="tabela-espn">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Time</th>
+                <th>J</th>
+                <th>V</th>
+                <th>E</th>
+                <th>D</th>
+                <th>GP</th>
+                <th>GC</th>
+                <th>SG</th>
+                <th>PTS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="libertadores">
+                <td>1</td>
+                <td class="time">
+                  <img
+                    src="img/png-transparent-sociedade-esportiva-palmeiras-removebg-preview.png"
+                    class="escudo"
+                  />
+                  Palmeiras
+                </td>
+                <td>4</td>
+                <td>3</td>
+                <td>1</td>
+                <td>0</td>
+                <td>12</td>
+                <td>5</td>
+                <td>+7</td>
+                <td class="pontos">10</td>
+              </tr>
+              <tr class="libertadores">
+                <td>2</td>
+                <td class="time">
+                  <img src="img/sp.png" class="escudo" /> São Paulo
+                </td>
+                <td>4</td>
+                <td>3</td>
+                <td>1</td>
+                <td>0</td>
+                <td>6</td>
+                <td>2</td>
+                <td>+4</td>
+                <td class="pontos">10</td>
+              </tr>
+              <tr class="libertadores">
+                <td>3</td>
+                <td class="time">
+                  <img
+                    src="img/escudo-Corinthians-removebg-preview.png"
+                    class="escudo"
+                  />
+                  Corinthians
+                </td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>5</td>
+                <td>3</td>
+                <td>+2</td>
+                <td class="pontos">7</td>
+              </tr>
+              <tr class="libertadores">
+                <td>4</td>
+                <td class="time">
+                  <img src="img/images-removebg-preview.png" class="escudo" />
+                  Bahia
+                </td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td>4</td>
+                <td>2</td>
+                <td>+2</td>
+                <td class="pontos">7</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="time">
+                  <img
+                    src="img/Fluminense_Football_Club.svg-removebg-preview.png"
+                    class="escudo"
+                  />
+                  Fluminense
+                </td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>5</td>
+                <td>4</td>
+                <td>+1</td>
+                <td class="pontos">7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="estatisticas-liga">
+          <div class="stat-card">
+            <h3>Artilheiros</h3>
+            <ul>
+              <li>Carlos Vinícius (Grêmio) — 4 gols</li>
+              <li>Danilo (Botafogo) — 4 gols</li>
+              <li>Luciano Acosta (Fluminense) — 3 gols</li>
+            </ul>
+          </div>
+          <div class="stat-card">
+            <h3>Assistências</h3>
+            <ul>
+              <li>Andreas Pereira (Palmeiras) — 5</li>
+              <li>Rodrigo Garro (Corinthians) — 3</li>
+              <li>Lucas Ronier (Coritiba) — 2</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="liga-section">
+        <div class="tabela-container">
+          <h2 class="liga-title">
+            <img
+              src="img/premier icon1.png"
+              class="liga-icon"
+              alt="icon_premier"
+            />
+          </h2>
+          <table class="tabela-espn">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Time</th>
+                <th>J</th>
+                <th>V</th>
+                <th>E</th>
+                <th>D</th>
+                <th>GP</th>
+                <th>GC</th>
+                <th>SG</th>
+                <th>PTS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="champions">
+                <td>1</td>
+                <td class="time">
+                  <img src="img/arsenal.png" class="escudo" /> Arsenal
+                </td>
+                <td>29</td>
+                <td>19</td>
+                <td>7</td>
+                <td>3</td>
+                <td>58</td>
+                <td>22</td>
+                <td>+36</td>
+                <td class="pontos">64</td>
+              </tr>
+              <tr class="champions">
+                <td>2</td>
+                <td class="time">
+                  <img src="img/city.png" class="escudo" /> Manchester City
+                </td>
+                <td>28</td>
+                <td>18</td>
+                <td>5</td>
+                <td>5</td>
+                <td>57</td>
+                <td>25</td>
+                <td>+32</td>
+                <td class="pontos">59</td>
+              </tr>
+              <tr class="champions">
+                <td>3</td>
+                <td class="time">
+                  <img
+                    src="img/Liverpool_FC.svg-removebg-preview.png"
+                    class="escudo"
+                  />
+                  Liverpool
+                </td>
+                <td>28</td>
+                <td>17</td>
+                <td>6</td>
+                <td>5</td>
+                <td>54</td>
+                <td>30</td>
+                <td>+24</td>
+                <td class="pontos">57</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="estatisticas-liga">
+          <div class="stat-card">
+            <h3>Artilheiros</h3>
+            <ul>
+              <li>Erling Haaland — 22 gols</li>
+              <li>Igor Thiago — 17 gols</li>
+              <li>Antoine Semenyo — 13 gols</li>
+            </ul>
+          </div>
+          <div class="stat-card">
+            <h3>Assistências</h3>
+            <ul>
+              <li>Bruno Fernandes — 12</li>
+              <li>Rayan Cherki — 7</li>
+              <li>Erling Haaland — 6</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="liga-section">
+        <div class="tabela-container">
+          <h2 class="liga-title">
+            <img
+              src="img/LaLiga-Logo-PNG-Official-Symbol-for-Football-League-Transparent-jpg-removebg-preview.png"
+              class="liga-icon"
+            />
+            La Liga
+          </h2>
+          <table class="tabela-espn">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Time</th>
+                <th>J</th>
+                <th>V</th>
+                <th>E</th>
+                <th>D</th>
+                <th>GP</th>
+                <th>GC</th>
+                <th>SG</th>
+                <th>PTS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="champions">
+                <td>1</td>
+                <td class="time">
+                  <img src="img/real.png" class="escudo" /> Real Madrid
+                </td>
+                <td>27</td>
+                <td>20</td>
+                <td>5</td>
+                <td>2</td>
+                <td>60</td>
+                <td>25</td>
+                <td>+35</td>
+                <td class="pontos">65</td>
+              </tr>
+              <tr class="champions">
+                <td>2</td>
+                <td class="time">
+                  <img src="img/barça.png" class="escudo" /> Barcelona
+                </td>
+                <td>27</td>
+                <td>18</td>
+                <td>6</td>
+                <td>3</td>
+                <td>55</td>
+                <td>30</td>
+                <td>+25</td>
+                <td class="pontos">60</td>
+              </tr>
+              <tr class="champions">
+                <td>3</td>
+                <td class="time">
+                  <img src="img/girona.png" class="escudo" /> Girona
+                </td>
+                <td>26</td>
+                <td>17</td>
+                <td>5</td>
+                <td>4</td>
+                <td>50</td>
+                <td>28</td>
+                <td>+22</td>
+                <td class="pontos">56</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="estatisticas-liga">
+          <div class="stat-card">
+            <h3>Artilheiros</h3>
+            <ul>
+              <li>Kylian Mbappé — 23 gols</li>
+              <li>Vedat Muriqi — 16 gols</li>
+              <li>Lamine Yamal — 13 gols</li>
+            </ul>
+          </div>
+          <div class="stat-card">
+            <h3>Assistências</h3>
+            <ul>
+              <li>Lamine Yamal — 9</li>
+              <li>Luis Milla — 8</li>
+              <li>Arda Güler — 7</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
-
     <footer>
-        <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
+      <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
