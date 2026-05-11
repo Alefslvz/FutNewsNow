@@ -1,171 +1,360 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notícia - FutNews Now</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="icon" type="image/x-icon" href="img/images.png">
-</head>
-<body>
-    <button class="btn-toggle-sidebar" onclick="document.querySelector('.sidebar-lateral').classList.toggle('aberta')">☰</button>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="img/images.png" />
+  </head>
+  <body>
+    <button
+      class="btn-toggle-sidebar"
+      onclick="
+        document.querySelector('.sidebar-lateral').classList.toggle('aberta')
+      "
+    >
+      ☰
+    </button>
     <div class="sidebar-lateral">
-        <div>
-            <div class="logo-sidebar">
-                <a href="index.html">
-                    <span class="logo-main">FUTNEWS</span>
-                    <span class="logo-now">NOW</span>
-                </a>
-                <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
-            </div>
-            <nav>
-                <a href="index.html"><span class="icone">🏠</span><span>Início</span></a>
-                <a href="brasileiro.html"><span class="icone">🇧🇷</span><span>Brasileirão</span></a>
-                <a href="internacional.html"><span class="icone">🌍</span><span>Internacional</span></a>
-                <a href="transferencias.html"><span class="icone">🔄</span><span>Transferências</span></a>
-                <a href="tabelas.html"><span class="icone">📊</span><span>Tabelas</span></a>
-            </nav>
-        </div>
-        <div>
-            <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
-                <span class="icone">🌙</span>
-                <span>Modo Escuro</span>
-            </button>
-            <div class="perfil-sidebar" onclick="abrirModal(event)" style="cursor: pointer;">
-                <div class="avatar" id="perfilAvatar">👤</div>
-                <div class="info" id="perfilInfo">
-                    <h4 id="perfilNome">Visitante</h4>
-                    <p id="perfilStatus">Clique para entrar</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-main">FUTNEWS</span>
-                <span class="logo-now">NOW</span>
-            </a>
+      <div>
+        <div class="logo-sidebar">
+          <a href="index.html">
+            <span class="logo-main">FUTNEWS</span>
+            <span class="logo-now">NOW</span>
+          </a>
+          <button class="btn-recolher" onclick="toggleSidebar()">◀</button>
         </div>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="brasileiro.html">Brasileirão</a>
-            <a href="internacional.html">Internacional</a>
-            <a href="transferencias.html">Transferências</a>
-            <a href="tabelas.html">Tabelas</a>
+          <a href="index.html"
+            ><span class="icone">🏠</span><span>Início</span></a
+          >
+          <a href="brasileiro.html"
+            ><span class="icone">🇧🇷</span><span>Brasileirão</span></a
+          >
+          <a href="internacional.html"
+            ><span class="icone">🌍</span><span>Internacional</span></a
+          >
+          <a href="transferencias.html"
+            ><span class="icone">🔄</span><span>Transferências</span></a
+          >
+          <a href="tabelas.html"
+            ><span class="icone">📊</span><span>Tabelas</span></a
+          >
         </nav>
-        <div class="search-box">
-            <input type="text" placeholder="Pesquisar...">
+      </div>
+      <div>
+        <button id="darkModeSidebarBtn" class="btn-darkmode-sidebar">
+          <span class="icone">🌙</span>
+          <span>Modo Escuro</span>
+        </button>
+        <div
+          class="perfil-sidebar"
+          onclick="abrirModal(event)"
+          style="cursor: pointer"
+        >
+          <div class="avatar" id="perfilAvatar">👤</div>
+          <div class="info" id="perfilInfo">
+            <h4 id="perfilNome">Visitante</h4>
+            <p id="perfilStatus">Clique para entrar</p>
+          </div>
         </div>
+      </div>
+    </div>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-main">FUTNEWS</span>
+          <span class="logo-now">NOW</span>
+        </a>
+      </div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="brasileiro.html">Brasileirão</a>
+        <a href="internacional.html">Internacional</a>
+        <a href="transferencias.html">Transferências</a>
+        <a href="tabelas.html">Tabelas</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="Pesquisar..." />
+      </div>
     </header>
-    <main style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
-        <article style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-            <img id="noticiaImagem" src="" alt="Imagem da notícia" style="width: 100%; height: 400px; object-fit: cover;">
+    <main style="max-width: 900px; margin: 40px auto; padding: 0 20px">
+      <article
+        style="
+          background: white;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <img
+          id="noticiaImagem"
+          src=""
+          alt="Imagem da notícia"
+          style="width: 100%; height: 400px; object-fit: cover"
+        />
 
-            <div style="padding: 40px;">
-                <h1 id="noticiaTitulo" style="font-size: 36px; margin-bottom: 15px;">Carregando...</h1>
+        <div style="padding: 40px">
+          <h1 id="noticiaTitulo" style="font-size: 36px; margin-bottom: 15px">
+            Carregando...
+          </h1>
 
-                <div style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
-                    <span id="noticiaData" style="color: #666;">📅 </span>
-                    <span id="noticiaCategoria" style="color: #666;">🏷️ </span>
-                    <span id="noticiaLeitura" style="color: #666;">⏱️ </span>
-                </div>
+          <div
+            style="
+              display: flex;
+              gap: 20px;
+              margin-bottom: 30px;
+              padding-bottom: 20px;
+              border-bottom: 1px solid #eee;
+            "
+          >
+            <span id="noticiaData" style="color: #666">📅 </span>
+            <span id="noticiaCategoria" style="color: #666">🏷️ </span>
+            <span id="noticiaLeitura" style="color: #666">⏱️ </span>
+          </div>
 
-                <div id="noticiaConteudo" style="font-size: 18px; line-height: 1.8; color: #333;">
-                    <p>Carregando conteúdo...</p>
-                </div>
+          <div
+            id="noticiaConteudo"
+            style="font-size: 18px; line-height: 1.8; color: #333"
+          >
+            <p>Carregando conteúdo...</p>
+          </div>
 
-                <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
-                    <a href="index.html" class="btn">← Voltar para Home</a>
-                </div>
-            </div>
-        </article>
-        <div class="secao-comentarios">
-            <h3>💬 Comentários</h3>
-    
-            <div class="form-comentario">
-                <input type="text" id="comentarioNome" placeholder="Seu nome" maxlength="50">
-                <textarea id="comentarioTexto" rows="3" placeholder="Deixe seu comentário..."></textarea>
-                <button class="btn-enviar" onclick="adicionarComentario()">Enviar comentário</button>
-            </div>
-    
-            <div id="listaComentarios" class="lista-comentarios">
-                <div class="sem-comentarios">Nenhum comentário ainda. Seja o primeiro!</div>
-            </div>
+          <div
+            style="
+              margin-top: 40px;
+              padding-top: 20px;
+              border-top: 1px solid #eee;
+            "
+          >
+            <a href="index.html" class="btn">← Voltar para Home</a>
+          </div>
         </div>
+      </article>
+      <div class="secao-comentarios">
+        <h3>💬 Comentários</h3>
+
+        <div class="form-comentario">
+          <input
+            type="text"
+            id="comentarioNome"
+            placeholder="Seu nome"
+            maxlength="50"
+          />
+          <textarea
+            id="comentarioTexto"
+            rows="3"
+            placeholder="Deixe seu comentário..."
+          ></textarea>
+          <button class="btn-enviar" onclick="adicionarComentario()">
+            Enviar comentário
+          </button>
+        </div>
+
+        <div id="listaComentarios" class="lista-comentarios">
+          <div class="sem-comentarios">
+            Nenhum comentário ainda. Seja o primeiro!
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
-        <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
+      <p>© 2026 FutNews Now - Portal de Notícias Esportivas</p>
     </footer>
     <div id="modalLogin" class="modal-login">
-        <span class="fechar-modal" onclick="fecharModal()">&times;</span>
-        <div class="modal-conteudo">
-            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <button id="abaLoginBtn" onclick="mostrarAba('login')" style="flex:1; background:#0b3d2e; color:white; padding:10px; border:none; border-radius:6px; cursor:pointer;">Entrar</button>
-                <button id="abaRegistroBtn" onclick="mostrarAba('registro')" style="flex:1; background:#555; color:white; padding:10px; border:none; border-radius:6px; cursor:pointer;">Cadastrar</button>
-            </div>
-
-            <div id="abaLogin">
-                <input type="text" id="loginUsuario" placeholder="Usuário" autocomplete="off" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
-                <input type="password" id="loginSenha" placeholder="Senha" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
-                <button onclick="fazerLogin()" style="width:100%; padding:12px; margin-top:10px; background:#0b3d2e; color:white; border:none; border-radius:6px; cursor:pointer;">Entrar</button>
-                <div id="erroLogin" class="erro-login"></div>
-            </div>
-
-            <div id="abaRegistro" style="display: none;">
-                <input type="text" id="regUsuario" placeholder="Usuário" autocomplete="off" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
-                <input type="email" id="regEmail" placeholder="E-mail" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
-                <input type="password" id="regSenha" placeholder="Senha" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:6px;">
-                <button onclick="fazerRegistro()" style="width:100%; padding:12px; margin-top:10px; background:#0b3d2e; color:white; border:none; border-radius:6px; cursor:pointer;">Cadastrar</button>
-                <div id="erroRegistro" class="erro-login"></div>
-            </div>
+      <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+      <div class="modal-conteudo">
+        <div style="display: flex; gap: 10px; margin-bottom: 20px">
+          <button
+            id="abaLoginBtn"
+            onclick="mostrarAba('login')"
+            style="
+              flex: 1;
+              background: #0b3d2e;
+              color: white;
+              padding: 10px;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+            "
+          >
+            Entrar
+          </button>
+          <button
+            id="abaRegistroBtn"
+            onclick="mostrarAba('registro')"
+            style="
+              flex: 1;
+              background: #555;
+              color: white;
+              padding: 10px;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+            "
+          >
+            Cadastrar
+          </button>
         </div>
+
+        <div id="abaLogin">
+          <input
+            type="text"
+            id="loginUsuario"
+            placeholder="Usuário"
+            autocomplete="off"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin: 10px 0;
+              border: 1px solid #ddd;
+              border-radius: 6px;
+            "
+          />
+          <input
+            type="password"
+            id="loginSenha"
+            placeholder="Senha"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin: 10px 0;
+              border: 1px solid #ddd;
+              border-radius: 6px;
+            "
+          />
+          <button
+            onclick="fazerLogin()"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin-top: 10px;
+              background: #0b3d2e;
+              color: white;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+            "
+          >
+            Entrar
+          </button>
+          <div id="erroLogin" class="erro-login"></div>
+        </div>
+
+        <div id="abaRegistro" style="display: none">
+          <input
+            type="text"
+            id="regUsuario"
+            placeholder="Usuário"
+            autocomplete="off"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin: 10px 0;
+              border: 1px solid #ddd;
+              border-radius: 6px;
+            "
+          />
+          <input
+            type="email"
+            id="regEmail"
+            placeholder="E-mail"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin: 10px 0;
+              border: 1px solid #ddd;
+              border-radius: 6px;
+            "
+          />
+          <input
+            type="password"
+            id="regSenha"
+            placeholder="Senha"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin: 10px 0;
+              border: 1px solid #ddd;
+              border-radius: 6px;
+            "
+          />
+          <button
+            onclick="fazerRegistro()"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin-top: 10px;
+              background: #0b3d2e;
+              color: white;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+            "
+          >
+            Cadastrar
+          </button>
+          <div id="erroRegistro" class="erro-login"></div>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            var urlParams = new URLSearchParams(window.location.search);
-            var noticiaId = urlParams.get('id');
+      window.addEventListener("DOMContentLoaded", function () {
+        var urlParams = new URLSearchParams(window.location.search);
+        var noticiaId = urlParams.get("id");
 
-            if (noticiaId) {
-                var noticias = JSON.parse(localStorage.getItem('noticias') || '[]');
-                var noticia = noticias.find(function(n) {
-                    return n.id == noticiaId;
-                });
+        if (noticiaId) {
+          var noticias = JSON.parse(localStorage.getItem("noticias") || "[]");
+          var noticia = noticias.find(function (n) {
+            return n.id == noticiaId;
+          });
 
-                if (noticia) {
-                    document.getElementById('noticiaTitulo').innerText = noticia.titulo;
-                    document.getElementById('noticiaImagem').src = noticia.imagem;
-                    document.getElementById('noticiaData').innerHTML = '📅 ' + noticia.data;
-                    document.getElementById('noticiaCategoria').innerHTML = '🏷️ ' + noticia.categoria;
-                    document.getElementById('noticiaConteudo').innerHTML = noticia.conteudo;
+          if (noticia) {
+            document.getElementById("noticiaTitulo").innerText = noticia.titulo;
+            document.getElementById("noticiaImagem").src = noticia.imagem;
+            document.getElementById("noticiaData").innerHTML =
+              "📅 " + noticia.data;
+            document.getElementById("noticiaCategoria").innerHTML =
+              "🏷️ " + noticia.categoria;
+            document.getElementById("noticiaConteudo").innerHTML =
+              noticia.conteudo;
 
-                    var palavras = noticia.conteudo.replace(/<[^>]*>/g, '').split(' ').length;
-                    var tempoLeitura = Math.ceil(palavras / 200);
-                    document.getElementById('noticiaLeitura').innerHTML = '⏱️ ' + tempoLeitura + ' min de leitura';
+            var palavras = noticia.conteudo
+              .replace(/<[^>]*>/g, "")
+              .split(" ").length;
+            var tempoLeitura = Math.ceil(palavras / 200);
+            document.getElementById("noticiaLeitura").innerHTML =
+              "⏱️ " + tempoLeitura + " min de leitura";
 
-                    document.title = noticia.titulo + ' - FutNews Now';
-                } else {
-                    document.getElementById('noticiaTitulo').innerText = 'Notícia não encontrada';
-                    document.getElementById('noticiaConteudo').innerHTML = '<p>Desculpe, a notícia que você procura não existe.</p>';
-                }
-            }
-        });
-        function carregarComentarios() {
-            var noticiaId = new URLSearchParams(window.location.search).get('id');
-            var comentarios = JSON.parse(localStorage.getItem('comentarios_' + noticiaId) || '[]');
-            var container = document.getElementById('listaComentarios');
-            
-            if (comentarios.length === 0) {
-                container.innerHTML = '<div class="sem-comentarios">Nenhum comentário ainda. Seja o primeiro!</div>';
-                return;
-            }
-            
-            container.innerHTML = '';
-            comentarios.reverse().forEach(function(comentario, index) {
-                var div = document.createElement('div');
-                div.className = 'comentario';
-                div.innerHTML = `
+            document.title = noticia.titulo + " - FutNews Now";
+          } else {
+            document.getElementById("noticiaTitulo").innerText =
+              "Notícia não encontrada";
+            document.getElementById("noticiaConteudo").innerHTML =
+              "<p>Desculpe, a notícia que você procura não existe.</p>";
+          }
+        }
+      });
+      function carregarComentarios() {
+        var noticiaId = new URLSearchParams(window.location.search).get("id");
+        var comentarios = JSON.parse(
+          localStorage.getItem("comentarios_" + noticiaId) || "[]",
+        );
+        var container = document.getElementById("listaComentarios");
+
+        if (comentarios.length === 0) {
+          container.innerHTML =
+            '<div class="sem-comentarios">Nenhum comentário ainda. Seja o primeiro!</div>';
+          return;
+        }
+
+        container.innerHTML = "";
+        comentarios.reverse().forEach(function (comentario, index) {
+          var div = document.createElement("div");
+          div.className = "comentario";
+          div.innerHTML = `
                     <div class="comentario-header">
                         <span class="comentario-nome">${escapeHtml(comentario.nome)}</span>
                         <span class="comentario-data">${comentario.data}</span>
@@ -173,56 +362,67 @@
                     <div class="comentario-texto">${escapeHtml(comentario.texto)}</div>
                     <button class="btn-deletar" onclick="deletarComentario(${comentarios.length - 1 - index})">🗑️ Excluir</button>
                 `;
-                container.appendChild(div);
-            });
+          container.appendChild(div);
+        });
+      }
+
+      function adicionarComentario() {
+        var nome = document.getElementById("comentarioNome").value.trim();
+        var texto = document.getElementById("comentarioTexto").value.trim();
+
+        if (!nome) {
+          alert("Por favor, digite seu nome!");
+          return;
+        }
+        if (!texto) {
+          alert("Por favor, digite um comentário!");
+          return;
         }
 
-        function adicionarComentario() {
-            var nome = document.getElementById('comentarioNome').value.trim();
-            var texto = document.getElementById('comentarioTexto').value.trim();
-            
-            if (!nome) {
-                alert('Por favor, digite seu nome!');
-                return;
-            }
-            if (!texto) {
-                alert('Por favor, digite um comentário!');
-                return;
-            }
-            
-            var noticiaId = new URLSearchParams(window.location.search).get('id');
-            var comentarios = JSON.parse(localStorage.getItem('comentarios_' + noticiaId) || '[]');
-            
-            comentarios.push({
-                nome: nome,
-                texto: texto,
-                data: new Date().toLocaleDateString('pt-BR') + ' ' + new Date().toLocaleTimeString('pt-BR')
-            });
-            
-            localStorage.setItem('comentarios_' + noticiaId, JSON.stringify(comentarios));
-            
-            document.getElementById('comentarioNome').value = '';
-            document.getElementById('comentarioTexto').value = '';
-            
-            carregarComentarios();
-        }
+        var noticiaId = new URLSearchParams(window.location.search).get("id");
+        var comentarios = JSON.parse(
+          localStorage.getItem("comentarios_" + noticiaId) || "[]",
+        );
 
-        function deletarComentario(index) {
-            var noticiaId = new URLSearchParams(window.location.search).get('id');
-            var comentarios = JSON.parse(localStorage.getItem('comentarios_' + noticiaId) || '[]');
-            comentarios.splice(index, 1);
-            localStorage.setItem('comentarios_' + noticiaId, JSON.stringify(comentarios));
-            carregarComentarios();
-        }
+        comentarios.push({
+          nome: nome,
+          texto: texto,
+          data:
+            new Date().toLocaleDateString("pt-BR") +
+            " " +
+            new Date().toLocaleTimeString("pt-BR"),
+        });
 
-        function escapeHtml(texto) {
-            var div = document.createElement('div');
-            div.textContent = texto;
-            return div.innerHTML;
-        }
+        localStorage.setItem(
+          "comentarios_" + noticiaId,
+          JSON.stringify(comentarios),
+        );
+
+        document.getElementById("comentarioNome").value = "";
+        document.getElementById("comentarioTexto").value = "";
+
         carregarComentarios();
+      }
+
+      function deletarComentario(index) {
+        var noticiaId = new URLSearchParams(window.location.search).get("id");
+        var comentarios = JSON.parse(
+          localStorage.getItem("comentarios_" + noticiaId) || "[]",
+        );
+        comentarios.splice(index, 1);
+        localStorage.setItem(
+          "comentarios_" + noticiaId,
+          JSON.stringify(comentarios),
+        );
+        carregarComentarios();
+      }
+
+      function escapeHtml(texto) {
+        var div = document.createElement("div");
+        div.textContent = texto;
+        return div.innerHTML;
+      }
+      carregarComentarios();
     </script>
-
-</body>
-
+  </body>
 </html>
